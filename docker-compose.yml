@@ -1,0 +1,27 @@
+version: '1.0'
+
+services:
+  sum_service:
+    build: ./sum_service
+    ports:
+      - "8001:8001"
+
+  subtract_service:
+    build: ./subtract_service
+    ports:
+      - "8002:8002"
+
+  multiply_service:
+    build: ./multiply_service
+    ports:
+      - "8003:8003"
+
+  divide_service:
+    build: ./divide_service
+    ports:
+      - "8004:8004"
+
+  gateway_service:
+    build: ./gateway_service
+    ports:
+      - "8000:8000"

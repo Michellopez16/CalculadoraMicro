@@ -1,0 +1,20 @@
+
+docker build -t sum-service .
+
+docker run -d -p 8001:8001 sum-service
+docker run -d -p 8002:8002 subtract-service
+docker run -d -p 8003:8003 multiply-service
+docker run -d -p 8004:8004 divide-service
+docker run -d -p 8000:8000 gateway-service
+
+
+uvicorn sum_service:app --reload --port 8001
+uvicorn subtract_service:app --reload --port 8002
+uvicorn multiply_service:app --reload --port 8003
+uvicorn divide_service:app --reload --port 8004
+
+
+
+docker-compose build
+
+docker-compose up
